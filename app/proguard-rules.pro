@@ -15,3 +15,19 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+# Producing useful obfuscated stack traces
+-printmapping out.map
+-renamesourcefileattribute SourceFile
+-keepattributes SourceFile,LineNumberTable
+
+-keepattributes EnclosingMethod
+
+-keep class com.google.fpl.liquidfun.*
+-keep enum com.google.fpl.liquidfun.*
+-keep interface com.google.fpl.liquidfun.*
+-keepclassmembers class com.google.fpl.liquidfun.liquidfunJNI {
+    native <methods>;
+    public *;
+    private *;
+}
