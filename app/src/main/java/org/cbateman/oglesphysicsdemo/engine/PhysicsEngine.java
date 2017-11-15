@@ -60,6 +60,7 @@ public class PhysicsEngine {
      * @param y2 upper right y coordinate
      * @param radius the radius of dynamic body
      */
+    @SuppressWarnings("SameParameterValue")
     public void onSurfaceChanged(float x1, float y1, float x2, float y2, float radius) {
         cleanUp();
 

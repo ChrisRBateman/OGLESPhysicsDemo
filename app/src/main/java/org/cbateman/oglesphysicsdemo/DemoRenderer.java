@@ -67,19 +67,21 @@ class DemoRenderer implements GLSurfaceView.Renderer {
         mContext = context;
 
         WindowManager windowManager = (WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
-        switch (windowManager.getDefaultDisplay().getRotation()) {
-            case Surface.ROTATION_0:
-                mGravityVec[0] = -GRAVITY;
-                break;
-            case Surface.ROTATION_90:
-                mGravityVec[1] = -GRAVITY;
-                break;
-            case Surface.ROTATION_180:
-                mGravityVec[0] = GRAVITY;
-                break;
-            case Surface.ROTATION_270:
-                mGravityVec[1] = GRAVITY;
-                break;
+        if (windowManager != null) {
+            switch (windowManager.getDefaultDisplay().getRotation()) {
+                case Surface.ROTATION_0:
+                    mGravityVec[0] = -GRAVITY;
+                    break;
+                case Surface.ROTATION_90:
+                    mGravityVec[1] = -GRAVITY;
+                    break;
+                case Surface.ROTATION_180:
+                    mGravityVec[0] = GRAVITY;
+                    break;
+                case Surface.ROTATION_270:
+                    mGravityVec[1] = GRAVITY;
+                    break;
+            }
         }
 
         mPhysicsEngine = new PhysicsEngine();

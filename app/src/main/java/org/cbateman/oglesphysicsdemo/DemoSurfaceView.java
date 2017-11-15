@@ -98,12 +98,12 @@ public class DemoSurfaceView extends GLSurfaceView implements SensorEventListene
         if (BuildConfig.DEBUG) {
             setDebugFlags(GLSurfaceView.DEBUG_LOG_GL_CALLS | GLSurfaceView.DEBUG_CHECK_GL_ERROR);
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            setPreserveEGLContextOnPause();
-        }
+        setPreserveEGLContextOnPause();
 
         mManager = (SensorManager)context.getSystemService(Context.SENSOR_SERVICE);
-        mAccelerometer = mManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        if (mManager != null) {
+            mAccelerometer = mManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        }
 
         Log.i(TAG, "DemoSurfaceView initialized");
     }

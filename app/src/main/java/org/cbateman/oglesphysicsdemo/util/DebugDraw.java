@@ -421,6 +421,7 @@ public class DebugDraw extends Draw {
      * @param height the height of bitmap (width should equal height)
      * @return Bitmap object
      */
+    @SuppressWarnings("SameParameterValue")
     private Bitmap createCircleBitmap(int width, int height) {
         Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ALPHA_8);
         Canvas canvas = new Canvas(bitmap);

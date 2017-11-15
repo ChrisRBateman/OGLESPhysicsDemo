@@ -13,6 +13,7 @@ import org.cbateman.oglesphysicsdemo.Constants;
 /**
  * Helper methods for setting up and rendering graphics.
  */
+@SuppressWarnings("WeakerAccess")
 public class GraphicUtils {
     private static final String TAG = Constants.TAG;
 
